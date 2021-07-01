@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContractService } from './contract.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'contracts';
+  constructor(private contract: ContractService) {}
+
+  connect() {
+    this.contract.connectAccount();
+  }
 }
